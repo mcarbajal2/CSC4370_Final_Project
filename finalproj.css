@@ -31,8 +31,6 @@ body {
 #menu {
 	width: 90vw;
 	height: 15vh;
-	background-image: url("transparentgray.png");
-	background-attachment: repeat;
 	border-radius: 50px;
 	margin-left: auto;
 	margin-right: auto;
