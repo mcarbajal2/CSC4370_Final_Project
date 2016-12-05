@@ -28,7 +28,7 @@ body {
 	margin-right: auto;
 }
 
-#home {
+#menu {
 	width: 90vw;
 	height: 15vh;
 	background-image: url("wild_oliva.png");
@@ -46,7 +46,7 @@ body {
 	z-index: 999;
 }
 
-#home_body {
+#menu_body {
 	height: 90vh;
 	width: 70%;
 	border-radius: 50px;
