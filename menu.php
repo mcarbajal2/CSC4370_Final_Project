@@ -6,13 +6,15 @@
 </head>
 <body>
 	<div id = "menu">
-		<h1 class = "welcome_bar">Welcome to the dark side!</h1>
-		<h4>prowlshop.com</h4><hr>
+		<marquee scrollamount = "12" class = "welcome_bar">Welcome to the dark side!</marquee>
+		<h4 style = "text-decoration: underline">prowlshop.com</h4>
 	</div>
 	<div id = "menu_body">
-		<p>Prowel Shop Inventory</p>
-		<p>View Your Cart</p>
-		<p>Your Profile</p>
+		<table align = "center" cellspacing = "15">
+		<tr><td>Prowel Shop Inventory</td></tr>
+		<tr><td>View Your Cart</td></tr>
+		<tr><td>Your Profile</td></tr>
+		</table>
 	</div>
 </body>
 </html>

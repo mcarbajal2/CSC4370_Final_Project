@@ -1,6 +1,7 @@
 body {
 	background-image: url("DARKHALLWAY.jpg");
 	background-size: cover;
+	background-attachment: fixed;
 	font-family: Lucida Sans Typewriter, Consolas;
 }
 
@@ -19,7 +20,7 @@ body {
 }
 
 #register {
-	width: 45vw;
+	width: 35vw;
 	height: 80vh;
 	background-image: url("transparentblack.png");
 	background-attachment: repeat;
@@ -29,7 +30,15 @@ body {
 }
 
 #menu {
-	width: 90vw;
+	width: 46vw;
+	height: 15vh;
+	border-radius: 50px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#admin {
+	width: 46vw;
 	height: 15vh;
 	border-radius: 50px;
 	margin-left: auto;
@@ -45,12 +54,23 @@ body {
 }
 
 #menu_body {
-	height: 90vh;
-	width: 70%;
+	height: 60vh;
+	width: 35vw;
 	border-radius: 50px;
 	margin-right: auto;
 	margin-left: auto;
 	margin-top: 70px;
+	background-image: url("transparentblack.png");
+	background-attachment: repeat;
+}
+
+#admin_body {
+	height: 75vh;
+	width: 35vw;
+	border-radius: 50px;
+	margin-right: auto;
+	margin-left: auto;
+	margin-top: 30px;
 	background-image: url("transparentblack.png");
 	background-attachment: repeat;
 }
@@ -69,22 +89,32 @@ h4 {
 	text-align: center;
 }
 
-h1.welcome_bar {
+h4 {
+	color: white;
+	text-align: center;
+}
+
+marquee.welcome_bar {
 	color: white;
 	text-align: center;
 	font-size: 45px;
 	padding: 20px;
 }
 
-h4 {
-	color: white;
-	text-align: center;
-}
-
 p {
 	text-align: center;
 	color: white;
 	padding-top: 15px;
+}
+
+td {
+	text-align: center;
+	font-size: 25px;
+	background-color: white;
+	width: 70px;
+	height: 40px;
+	border-radius: 7px;
+	padding: 10px;
 }
 
 img {
