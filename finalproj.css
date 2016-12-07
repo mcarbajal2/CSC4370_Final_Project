@@ -5,10 +5,6 @@ body {
 	font-family: Lucida Sans Typewriter, Consolas;
 }
 
-#wrapper {
-	width: 100%;
-}
-
 #login {
 	width: 300px;
 	height: 210px;
