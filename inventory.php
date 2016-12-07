@@ -12,15 +12,15 @@
 	<div id = "inventory_body">
 		<form>
 		<table align = "center" cellspacing = "15">
-		<tr><td class = "products">Product 1</td>
-			<td class = "products">Product 2</td>
-			<td class = "products">Product 3</td></tr>
+		<tr><td class = "products" id = "textbooks"><img src = "textbooks.png">Textbooks - $600</td>
+			<td class = "products" id = "notes"><img src = "notes.png">Prev. Semester Notes - $15</td>
+			<td class = "products"><img src = "diploma.png">Diploma - $40000</td></tr>
 		<tr><td class = "select_options"><select><option value = "val1">Val1</option><option value = "val2">Val2</option></select></td>
 			<td class = "select_options"><select><option value = "val1">Val1</option><option value = "val2">Val2</option></select></td>
 			<td class = "select_options"><select><option value = "val1">Val1</option><option value = "val2">Val2</option></select></td></tr>
-		<tr><td class = "products">Product 4</td>
-			<td class = "products">Product 5</td>
-			<td class = "products">Product 6</td></tr>
+		<tr><td class = "products"><img src = "laptop.png">Laptop - $1000</td>
+			<td class = "products"><img src = "pizza.png">Pizza - $20</td>
+			<td class = "products" id = "scholarship"><img src = "money.png">Scholarship - $0</td></tr>
 		<tr><td class = "select_options"><select><option value = "val1">Val1</option><option value = "val2">Val2</option></select></td>
 			<td class = "select_options"><select><option value = "val1">Val1</option><option value = "val2">Val2</option></select></td>
 			<td class = "select_options"><select><option value = "val1">Val1</option><option value = "val2">Val2</option></select></td></tr>

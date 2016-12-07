@@ -81,7 +81,7 @@ body {
 
 #inventory_body {
 	height: 77vh;
-	width: 35vw;
+	width: 40vw;
 	border-radius: 50px;
 	margin-right: auto;
 	margin-left: auto;
@@ -170,7 +170,7 @@ td {
 td.products {
 	width: 13vw;
 	height: 20vh;
-	font-size: 15px;
+	font-size: 12px;
 }
 
 td.cart {
@@ -180,7 +180,7 @@ td.cart {
 }
 
 td.select_options {
-	background-color: black;
+	background: rgba(0, 0, 0, 0.0);
 	font-size: 15px;
 	width: 70px;
 	height: 20px;
@@ -219,7 +219,7 @@ li {
 
 img {
 	height: 10vh;
-	width: 10vw;
+	width: 8vw;
 	text-align: center;
 	padding: 3px;
 }
