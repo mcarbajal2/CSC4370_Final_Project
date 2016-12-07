@@ -10,6 +10,7 @@
 		<h4 style = "text-decoration: underline">prowlshop.com</h4>
 	</div>
 	<div id = "inventory_body">
+		<form>
 		<table align = "center" cellspacing = "15">
 		<tr><td class = "products">Product 1</td>
 			<td class = "products">Product 2</td>
@@ -24,7 +25,9 @@
 			<td class = "select_options"><select><option value = "val1">Val1</option><option value = "val2">Val2</option></select></td>
 			<td class = "select_options"><select><option value = "val1">Val1</option><option value = "val2">Val2</option></select></td></tr>
 		</table>
-		<p><a href = "menu.php" align = >Back to menu</a></p>
+		<center><input type = "submit" value = "Update Cart"></center>
+		</form>
 	</div>
+	<p><a href = "menu.php" align = >Back to menu</a></p>
 </body>
 </html>

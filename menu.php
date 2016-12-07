@@ -12,7 +12,7 @@
 	<div id = "menu_body">
 		<table align = "center" cellspacing = "15">
 		<tr><td><a href = "inventory.php" class = "black">Prowl Shop Inventory</a></td></tr>
-		<tr><td>View Your Cart</td></tr>
+		<tr><td><a href = "viewcart.php" class = "black">View Your Cart</a></td></tr>
 		<tr><td>Your Profile</td></tr>
 		</table>
 	</div>
