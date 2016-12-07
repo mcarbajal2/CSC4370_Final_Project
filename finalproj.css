@@ -105,6 +105,15 @@ body {
 	background-attachment: repeat;
 }
 
+#thankyou_body {
+	height: 80vh;
+	width: 35vw;
+	border-radius: 50px;
+	margin-right: auto;
+	margin-left: auto;
+	margin-top: 30px;
+}
+
 a {
 	color: white;
 }
@@ -175,5 +184,13 @@ td.select_options {
 img {
 	height: 10vh;
 	width: 10vw;
+	text-align: center;
 	padding: 3px;
+}
+
+img.thankyou {
+	height: 70vh;
+	width: 35vw;
+	text-align: center;
+	padding-top: 40px;
 }
