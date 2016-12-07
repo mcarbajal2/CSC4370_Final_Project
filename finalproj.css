@@ -45,6 +45,14 @@ body {
 	margin-right: auto;
 }
 
+#inventory {
+	width: 46vw;
+	height: 15vh;
+	border-radius: 50px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
 #header {
 	height: 15vh;
 	width: 100%;
@@ -75,8 +83,24 @@ body {
 	background-attachment: repeat;
 }
 
+#inventory_body {
+	height: 75vh;
+	width: 35vw;
+	border-radius: 50px;
+	margin-right: auto;
+	margin-left: auto;
+	margin-top: 30px;
+	background-image: url("transparentblack.png");
+	background-attachment: repeat;
+}
+
 a {
 	color: white;
+}
+
+a.black {
+	color: black;
+	text-decoration: none;
 }
 
 h1 {
@@ -115,6 +139,20 @@ td {
 	height: 40px;
 	border-radius: 7px;
 	padding: 10px;
+}
+
+td.products {
+	width: 120px;
+	height: 130px;
+	font-size: 15px;
+}
+
+td.select_options {
+	color: white;
+	font-size: 15px;
+	background-color: black;
+	width: 70px;
+	height: 20px;
 }
 
 img {
