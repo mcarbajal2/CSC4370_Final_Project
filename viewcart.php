@@ -11,12 +11,12 @@
 	</div>
 	<div id = "cart_body">
 		<table align = "center" cellspacing = "15">
-		<tr><td class = "cart">Product 1 x1 - $1.00</td></tr>
-		<tr><td class = "cart">Product 2 x1 - $1.00</td></tr>
-		<tr><td class = "cart">Product 3 x1 - $1.00</td></tr>
-		<tr><td class = "cart">Product 4 x1 - $1.00</td></tr>
-		<tr><td class = "cart">Product 5 x1 - $1.00</td></tr>
-		<tr><td class = "cart">Product 6 x1 - $1.00</td></tr>
+		<tr><td class = "cart">Textbooks x0 - $0</td></tr>
+		<tr><td class = "cart">Previous Semester Notes 2 x0 - $0</td></tr>
+		<tr><td class = "cart">Diploma 3 x0 - $0</td></tr>
+		<tr><td class = "cart">Laptop 4 x0 - $0</td></tr>
+		<tr><td class = "cart">Pizza 5 x0 - $0</td></tr>
+		<tr><td class = "cart">Scholarship 6 x0 - $0</td></tr>
 		</table>
 		<p class = "cart_total">Total: $6.00</p>
 		<form method = "link" action = "checkout.html">
