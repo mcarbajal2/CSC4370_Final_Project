@@ -114,6 +114,15 @@ body {
 	margin-top: 30px;
 }
 
+#profile_body {
+	height: 75vh;
+	width: 35vw;
+	border-radius: 50px;
+	margin-right: auto;
+	margin-left: auto;
+	margin-top: 30px;
+}
+
 a {
 	color: white;
 }
@@ -175,10 +184,41 @@ td.cart {
 }
 
 td.select_options {
-	font-size: 15px;
 	background-color: black;
+	font-size: 15px;
 	width: 70px;
 	height: 20px;
+}
+
+td.profile_header {
+	font-size: 20px;
+	width: 30vw;
+	height: 2vh;
+	text-align: left;
+}
+
+td.profile_info {
+	background-color: black;
+	width: 30vw;
+	height: 2vh;
+	padding: 2px;
+}
+
+ul {
+	color: white;
+	font-size: 15px;
+	list-style: none;
+	text-align: left;
+}
+
+ol {
+	color: white;
+	font-size: 15px;
+	text-align: left;
+}
+
+li {
+	padding: 2px;
 }
 
 img {

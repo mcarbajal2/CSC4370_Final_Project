@@ -13,7 +13,7 @@
 		<table align = "center" cellspacing = "15">
 		<tr><td><a href = "inventory.php" class = "black">Prowl Shop Inventory</a></td></tr>
 		<tr><td><a href = "viewcart.php" class = "black">View Your Cart</a></td></tr>
-		<tr><td>Your Profile</td></tr>
+		<tr><td><a href = "profile.php" class = "black">Your Profile</a></td></tr>
 		</table>
 	</div>
 </body>
