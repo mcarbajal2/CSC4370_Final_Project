@@ -6,7 +6,7 @@ $password = $_POST['password'];
 
 if ($username == "admin" && $password == "admin") {
 	//go to admin menu
-	?><script type="text/javascript">location.href = 'admin.php';</script<?
+	?><script type="text/javascript">location.href = 'admin.php';</script><?
 }
 
 else {
