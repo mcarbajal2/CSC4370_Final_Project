@@ -14,7 +14,7 @@ if ($username == "" || $password == ""|| $email == ""|| $fname == ""|| $lname ==
 }
 
 //cannot register as admin
-if ($username == "admin") {
+else if ($username == "admin") {
 	<script type="text/javascript">alert("You cannot register using that username.");</script>
 	<script type="text/javascript">location.href = 'register.html';</script>
 }
