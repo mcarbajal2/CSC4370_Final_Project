@@ -20,14 +20,14 @@ else if ($username == "admin") {
 }
 
 //check if previous user, if so -> username: $username / email: $email etc. already in system
-$query = "SELECT Fname FROM Users WHERE Email = "$email";";
-if ($query = null) {
+$query = "SELECT Email FROM Users WHERE Email = "$email";";
+if ($query = $email) {
 	?><script type="text/javascript">alert("That email is already in use.");</script>
 	<script type="text/javascript">location.href = 'register.html';</script><?
 }
 
-$query = "SELECT Fname FROM Users WHERE Username = "$username";";
-if ($query = null) {
+$query = "SELECT Username FROM Users WHERE Username = "$username";";
+if ($query = $username) {
 	?><script type="text/javascript">alert("That username is already in use.");</script>
 	<script type="text/javascript">location.href = 'register.html';</script><?
 }

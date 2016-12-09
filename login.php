@@ -12,12 +12,12 @@ if ($username == "admin" && $password == "admin") {
 else {
 	//SELECT to check if previous user, if so -> user menu
 	$query = "SELECT Username FROM Users WHERE Username = "$username";"
-	if ($query = null) {
+	if ($query != $username) {
 		?><script type="text/javascript">alert("Username not recognized.");</script>
 		<script type="text/javascript">location.href = 'login.html';</script><?
 	}
 	$query = "SELECT Password FROM Users WHERE Password = "$password";"
-	else if ($query = null) {
+	else if ($query != $password) {
 		?><script type="text/javascript">alert("Password not recognized");</script>
 		<script type="text/javascript">location.href = 'login.html';</script><?
 	}
