@@ -1,0 +1,145 @@
+@import url('https://fonts.googleapis.com/css?family=Inconsolata');
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,900,700,500');
+
+body {
+    padding: 50px 0px;
+    background-color: lightgray;
+    margin: 0 auto;
+    width: 400px; 
+    
+    font-family: 'Roboto', sans-serif;
+    padding-bottom: 30px;
+    color: ;
+}
+
+.form-container {
+    width: 100%;
+    text-align: center;
+}
+
+.personal-info {
+    background-color: lightpink;
+    padding: 1px 0px;
+    text-align: center;
+}
+
+.card-info {
+    background-color: lightgoldenrodyellow;
+    padding: 0.5px; 
+    text-align: center;
+}
+
+input {
+    margin: 1px 0px;
+}
+
+input[type="text"], input[type="email"], input[type="tel"], input[type="number"] {
+    display: block;
+    height: 35px;
+    width: 387px;
+    padding-left: 10px;
+    border: none;
+}
+
+input[type="submit"] {
+    display: block;
+    height: 45px;
+    width: 399px;
+    border: none;
+    color: ;
+    background-color: lightcyan;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+input[type="submit"]:hover {
+    transition: 0.5s ease;
+    background-color: darkcyan;
+}
+
+#column-tri {
+    width: 30%;
+    float: left;
+    margin-right: 2.34px; 
+}
+
+#column-left {
+    width: 47%;
+    float: left;
+}
+
+#column-right {
+    width: 47%;
+    float: right;
+}
+
+
+/* ----- CARD ANIMATION ----- */
+
+.flip-container {
+    -webkit-perspective: 1000;
+    -moz-perspective: 1000;
+    -o-perspective: 1000;
+    perspective: 1000;
+    
+    padding: 10px; 
+    margin: 0 auto; 
+    background-color: white;
+}
+
+.flipped {
+    -webkit-transform: rotateY(180deg);
+    -moz-transform: rotateY(180deg);
+    -o-transform: rotateY(180deg);
+    transform: rotateY(180deg);
+}
+
+.flip-container, .front, .back {
+    width: 370px;
+    height: 250px;
+    overflow: hidden;
+}
+
+.flipper {
+    -webkit-transition: 0.5s;
+    -webkit-transform-style: preserve-3d;
+    
+    -moz-transition: 0.5s;
+    -moz-transform-style: preserve-3d;
+    
+    -o-transition: 0.5s;
+    -o-transform-style: preserve-3d;
+    
+    transition: 0.5s;
+    transform-style: preserve-3d;
+    
+    position: relative;
+}
+
+.front, .back {
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -o-backface-visibility: hidden;
+    backface-visibility: hidden;
+    
+    border-radius: 10px;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.front {
+    background-color: lavenderblush;
+    z-index: 2;
+}
+
+.back {
+    -webkit-transform: rotateY(180deg);
+    -moz-transform: rotateY(180deg);
+    -o-transform: rotateY(180deg);
+    transform: rotateY(180deg);
+    
+    background-color: lavender;
+}
