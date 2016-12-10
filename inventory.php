@@ -46,61 +46,101 @@ if(isset($_POST["add_to_cart"]))
                 {  
                      unset($_SESSION["shopping_cart"][$keys]);  
                      echo '<script>alert("Item Removed")</script>';  
-                     echo '<script>window.location="index.php"</script>';  
+                     echo '<script>window.location="inventory.php"</script>';  
                 }  
            }  
       }  
  }  
 ?>
 
-<!DOCTYPE html>
-<html>
-<head>
-	<link href="finalproj.css" type="text/css"rel = "stylesheet"/>
+ <!DOCTYPE html>  
+ <html>  
+      <head>  
+<!--	<link href="finalproj.css" type="text/css"rel = "stylesheet"/>  -->
 	<title>Inventory - ProwlShop.com</title>
-</head>
-<body>
-	<div id = "inventory">
+
+     </head>  
+      <body>  
+<!-- <h3 align="center">Simple PHP Mysql Shopping Cart</h3> -->
+		<img src = "http://codd.cs.gsu.edu/~mcarbajal2/final/images/backpack.png">
+
+<img src = "http://codd.cs.gsu.edu/~mcarbajal2/final/images/notes.png">
+ 
+<img src = "http://codd.cs.gsu.edu/~mcarbajal2/final/images/diploma.png">
+
+><img src = "http://codd.cs.gsu.edu/~mcarbajal2/final/images/laptop.png">
+
+<img src = "http://codd.cs.gsu.edu/~mcarbajal2/final/images/pizza.png">
+
+<img src = "http://codd.cs.gsu.edu/~mcarbajal2/final/images/money.png">
+
+<div id = "inventory">
 		<h1>Inventory Selection</h1><hr style = "width: 70%">
 		<h4 style = "text-decoration: underline">prowlshop.com</h4>
 	</div>
-	<div id = "inventory_body">
-	<?php  
-		$query = "SELECT * FROM INVENTORY ORDER BY id ASC";  
-		$result = mysqli_query($connect, $query);  
-		if(mysqli_num_rows($result) > 0) {  
-			while($row = mysqli_fetch_array($result))  
-		{  
-    ?>  
-	<form method = "post" action = "index.php?action=add&id=<?php echo $row["id"];?>">
-		<h4 class = "text-info"><?php echo $row["product"]; ?></h4>  
-		<h4 class = "text-danger">$ <?php echo $row["price"]; ?></h4>  
-		<input type = "text" name = "quantity" value = "1" />  
-		<input type = "text" name = "quantity" class = "form-control" value = "1" />  
-		<input type = "hidden" name = "hidden_product" value = "<?php echo $row["product"]; ?>" />  
-		<input type = "hidden" name = "hidden_price" value = "<?php echo $row["price"]; ?>" />  
-		<input type = "submit" name = "add_to_cart" style = "margin-top:5px;" value = "add" />
-		
-		<!--<table align = "center" cellspacing = "15">
-		<tr><td class = "products" id = "1"><img src = "http://codd.cs.gsu.edu/~mcarbajal2/final/images/backpack.png">Backpack - $5</td>
-			<td class = "products" id = "2"><img src = "http://codd.cs.gsu.edu/~mcarbajal2/final/images/notes.png">Prev. Semester Notes - $10</td>
-			<td class = "products" id = "3"><img src = "http://codd.cs.gsu.edu/~mcarbajal2/final/images/diploma.png">Diploma - $5000</td>
-		</tr>
-		<tr><td class = "input_options"><select><option value = "val1">Val1</option><option value = "val2">Val2</option></select></td>
-			<td class = "input_options"><select><option value = "val1">Val1</option><option value = "val2">Val2</option></select></td>
-			<td class = "input_options"><select><option value = "val1">Val1</option><option value = "val2">Val2</option></select></td>
-		</tr>
-		<tr><td class = "products" id = "4"><img src = "http://codd.cs.gsu.edu/~mcarbajal2/final/images/laptop.png">Laptop - $800</td>
-			<td class = "products" id = "5"><img src = "http://codd.cs.gsu.edu/~mcarbajal2/final/images/pizza.png">Pizza - $25</td>
-			<td class = "products" id = "6"><img src = "http://codd.cs.gsu.edu/~mcarbajal2/final/images/money.png">Scholarship - $1000</td></tr>
-		<tr><td class = "input_options"><select><option value = "val1">Val1</option><option value = "val2">Val2</option></select></td>
-			<td class = "input_options"><select><option value = "val1">Val1</option><option value = "val2">Val2</option></select></td>
-			<td class = "input_options"><select><option value = "val1">Val1</option><option value = "val2">Val2</option></select></td>
-		</tr>
-		</table>
-		<center><input type = "submit" value = "Update Cart"></center>-->
-		</form>
-	</div>
-	<p><a href = "menu.php" align = >Back to menu</a></p>
-</body>
-</html>
+
+<br />  
+                <?php  
+                $query = "SELECT * FROM INVENTORY ORDER BY id ASC";  
+                $result = mysqli_query($connect, $query);  
+                if(mysqli_num_rows($result) > 0)  
+                {  
+                     while($row = mysqli_fetch_array($result))  
+                     {  
+                ?>  
+		 <form method="post" action="inventory.php?action=add&id=<?php echo $row["id"]; ?>">  
+		<h4 class="text-info"><?php echo $row["product"]; ?></h4>  
+                               <h4 class="text-danger">$ <?php echo $row["price"]; ?></h4>  
+                               <input type="text" name="quantity" value="1" />
+                               <input type="hidden" name="hidden_product" value="<?php echo $row["product"]; ?>" />
+                               <input type="hidden" name="hidden_price" value="<?php echo $row["price"]; ?>" />
+                               <input type="submit" name="add_to_cart" style="margin-top:5px;" value="Add to Cart" />
+		 </form> 
+		 <?php  
+                     }  
+                }  
+                ?>  
+<div style="clear:both"></div>  
+                <br />  
+                <h3>Order Details</h3>  
+                <div class="table-responsive">  
+                     <table class="table table-bordered">  
+                          <tr>  
+                               <th width="40%">Item Name</th>  
+                               <th width="10%">Quantity</th>  
+                               <th width="20%">Price</th>  
+                               <th width="15%">Total</th>  
+                               <th width="5%">Action</th>  
+                          </tr>  
+                          <?php   
+                          if(!empty($_SESSION["shopping_cart"]))  
+                          {  
+                               $total = 0;  
+                               foreach($_SESSION["shopping_cart"] as $keys => $values)  
+                               {  
+                          ?>  
+                          <tr>  
+                               <td><?php echo $values["item_name"]; ?></td>  
+                               <td><?php echo $values["item_quantity"]; ?></td>  
+                               <td>$ <?php echo $values["item_price"]; ?></td>  
+                               <td>$ <?php echo number_format($values["item_quantity"] * $values["item_price"], 2); ?></td>  
+                               <td><a href="index.php?action=delete&id=<?php echo $values["item_id"]; ?>"><span class="text-danger">Remove</span></a></td>  
+                          </tr>  
+                          <?php  
+                                    $total = $total + ($values["item_quantity"] * $values["item_price"]);  
+                               }  
+                          ?>  
+                          <tr>  
+                               <td colspan="3" align="right">Total</td>  
+                               <td align="right">$ <?php echo number_format($total, 2); ?></td>  
+                               <td></td>  
+                          </tr>  
+                          <?php  
+                          }  
+                          ?>  
+                     </table>  
+                </div>  
+           </div>  
+           <br />  
+      </body>  
+ </html>  
