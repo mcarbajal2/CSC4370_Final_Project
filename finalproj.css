@@ -79,6 +79,17 @@ body {
 	background-attachment: repeat;
 }
 
+#inventory_list {
+	height: 150vh;
+	width: 40vw;
+	border-radius: 50px;
+	margin-right: auto;
+	margin-left: auto;
+	margin-top: 30px;
+	background-image: url("http://codd.cs.gsu.edu/~mcarbajal2/final/images/transparentblack.png");
+	background-attachment: repeat;
+}
+
 #inventory_body {
 	height: 77vh;
 	width: 40vw;
@@ -136,14 +147,6 @@ h1 {
 h4 {
 	color: white;
 	text-align: center;
-}
-
-h4.text-danger {
-	text-align: left;
-}
-
-h4.text-info {
-	text-align: left;
 }
 
 marquee.welcome_bar {
@@ -226,7 +229,7 @@ li {
 }
 
 img {
-	height: 10vh;
+	height: 12vh;
 	width: 8vw;
 	text-align: center;
 	padding: 3px;
