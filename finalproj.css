@@ -138,6 +138,14 @@ h4 {
 	text-align: center;
 }
 
+h4.text-danger {
+	text-align: left;
+}
+
+h4.text-info {
+	text-align: left;
+}
+
 marquee.welcome_bar {
 	color: white;
 	text-align: center;
@@ -179,7 +187,7 @@ td.cart {
 	font-size: 15px;
 }
 
-td.select_options {
+td.input_options {
 	background: rgba(0, 0, 0, 0.0);
 	font-size: 15px;
 	width: 70px;
