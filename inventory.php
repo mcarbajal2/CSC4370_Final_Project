@@ -55,92 +55,42 @@ if(isset($_POST["add_to_cart"]))
 
  <!DOCTYPE html>  
  <html>  
-      <head>  
-<!--	<link href="finalproj.css" type="text/css"rel = "stylesheet"/>  -->
-	<title>Inventory - ProwlShop.com</title>
-
-     </head>  
-      <body>  
+	<head>  
+		<link href="finalproj.css" type="text/css"rel = "stylesheet"/>
+		<title>Inventory - ProwlShop.com</title>
+	</head>  
+	<body>  
+	
 <!-- <h3 align="center">Simple PHP Mysql Shopping Cart</h3> -->
-		<img src = "http://codd.cs.gsu.edu/~mcarbajal2/final/images/backpack.png">
 
-<img src = "http://codd.cs.gsu.edu/~mcarbajal2/final/images/notes.png">
- 
-<img src = "http://codd.cs.gsu.edu/~mcarbajal2/final/images/diploma.png">
-
-><img src = "http://codd.cs.gsu.edu/~mcarbajal2/final/images/laptop.png">
-
-<img src = "http://codd.cs.gsu.edu/~mcarbajal2/final/images/pizza.png">
-
-<img src = "http://codd.cs.gsu.edu/~mcarbajal2/final/images/money.png">
-
-<div id = "inventory">
+	<div id = "inventory">
 		<h1>Inventory Selection</h1><hr style = "width: 70%">
 		<h4 style = "text-decoration: underline">prowlshop.com</h4>
 	</div>
-
-<br />  
-                <?php  
-                $query = "SELECT * FROM INVENTORY ORDER BY id ASC";  
-                $result = mysqli_query($connect, $query);  
-                if(mysqli_num_rows($result) > 0)  
-                {  
-                     while($row = mysqli_fetch_array($result))  
-                     {  
-                ?>  
-		 <form method="post" action="inventory.php?action=add&id=<?php echo $row["id"]; ?>">  
+		
+	<br /><br />
+	<?php  
+	$query = "SELECT * FROM INVENTORY ORDER BY id ASC";  
+	$result = mysqli_query($connect, $query);  
+	if(mysqli_num_rows($result) > 0) {  
+		while($row = mysqli_fetch_array($result))  
+	{?>  
+	<center>
+	<form method="post" action="inventory.php?action=add&id=<?php echo $row["id"]; ?>">  
 		<h4 class="text-info"><?php echo $row["product"]; ?></h4>  
-                               <h4 class="text-danger">$ <?php echo $row["price"]; ?></h4>  
-                               <input type="text" name="quantity" value="1" />
-                               <input type="hidden" name="hidden_product" value="<?php echo $row["product"]; ?>" />
-                               <input type="hidden" name="hidden_price" value="<?php echo $row["price"]; ?>" />
-                               <input type="submit" name="add_to_cart" style="margin-top:5px;" value="Add to Cart" />
-		 </form> 
-		 <?php  
-                     }  
-                }  
-                ?>  
-<div style="clear:both"></div>  
-                <br />  
-                <h3>Order Details</h3>  
-                <div class="table-responsive">  
-                     <table class="table table-bordered">  
-                          <tr>  
-                               <th width="40%">Item Name</th>  
-                               <th width="10%">Quantity</th>  
-                               <th width="20%">Price</th>  
-                               <th width="15%">Total</th>  
-                               <th width="5%">Action</th>  
-                          </tr>  
-                          <?php   
-                          if(!empty($_SESSION["shopping_cart"]))  
-                          {  
-                               $total = 0;  
-                               foreach($_SESSION["shopping_cart"] as $keys => $values)  
-                               {  
-                          ?>  
-                          <tr>  
-                               <td><?php echo $values["item_name"]; ?></td>  
-                               <td><?php echo $values["item_quantity"]; ?></td>  
-                               <td>$ <?php echo $values["item_price"]; ?></td>  
-                               <td>$ <?php echo number_format($values["item_quantity"] * $values["item_price"], 2); ?></td>  
-                               <td><a href="index.php?action=delete&id=<?php echo $values["item_id"]; ?>"><span class="text-danger">Remove</span></a></td>  
-                          </tr>  
-                          <?php  
-                                    $total = $total + ($values["item_quantity"] * $values["item_price"]);  
-                               }  
-                          ?>  
-                          <tr>  
-                               <td colspan="3" align="right">Total</td>  
-                               <td align="right">$ <?php echo number_format($total, 2); ?></td>  
-                               <td></td>  
-                          </tr>  
-                          <?php  
-                          }  
-                          ?>  
-                     </table>  
-                </div>  
-           </div>  
-           <br />  
-      </body>  
+		<h4 class="text-danger">$ <?php echo $row["price"]; ?></h4>  
+		<input type="text" name="quantity" value="1" />
+		<input type="hidden" name="hidden_product" value="<?php echo $row["product"]; ?>" />
+		<input type="hidden" name="hidden_price" value="<?php echo $row["price"]; ?>" />
+		<input type="submit" name="add_to_cart" style="margin-top:5px;" value="Add to Cart" />
+	 </form>
+	 </center>
+	
+	<?php  
+	}  
+										}  
+	?>
+	<br />  
+	<p><a href = "menu.php" align = >Back to menu</a></p>
+</body>  
  </html>  
