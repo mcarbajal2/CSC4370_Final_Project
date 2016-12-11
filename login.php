@@ -26,27 +26,32 @@ include("http://codd.cs.gsu.edu/~mcarbajal2/final/config.php");
 if(isset($_POST["login"])){
 	$username = $_POST['username'];
 	$password = $_POST['password'];
-
-	if ($username == "admin" && $password == "admin" && !empty($username) && !empty($password)) {
-		//go to admin menu
-		?><script type="text/javascript">location.href = 'admin.php';</script><?
-	}
-
-	else {
-		//SELECT to check if previous user, if so -> user menu
-		$query = "SELECT Username FROM Users WHERE Username = '$username';"
-		if ($query != $username || empty($username)) {
-			?><script type="text/javascript">alert("Username not recognized.");</script><?
-		}
-		$query = "SELECT Password FROM Users WHERE Password = "$password";"
-		else if ($query != $password || !empty($password)) {
-			?><script type="text/javascript">alert("Password not recognized");</script><?
+	
+	$query = "SELECT * FROM users WHERE username = '$username' AND password = '$password'";
+	$result = $conn->query($query);
+	if($run->num_rows > 0){
+		$row = $run->fetch_array(MYSQLI_ASSOC);
+		
+		if ($row["username"] == "admin" && $row["password"] == "admin") {
+			echo "<script>location.href = 'menu.php';</script>";
 		}
 		else {
-			?><script type="text/javascript">location.href = 'menu.php';</script><?
+			continue;
 		}
+		
+		header("menu.php");
+		session_start();
+		$_SESSION["ID"] = $row["ID"];
+		$_SESSION["User"] = $row["username"];
+		$_SESSION["Pass"] = $row["password"];
+		$_SESSION['fname'] = $row["fname"];
+		$_SESSION['lname'] = $row["lname"];
+        $_SESSION['email'] = $row["email"];
+	}
+	else {
+		echo "<script>alert('Username and/or Password not recognized')</script>";
+		return;
 	}
 }
-
 mysql_close();
 ?>
