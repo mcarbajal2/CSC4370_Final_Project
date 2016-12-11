@@ -33,20 +33,18 @@ if(isset($_POST["login"])){
 		$row = $run->fetch_array(MYSQLI_ASSOC);
 		
 		if ($row["username"] == "admin" && $row["password"] == "admin") {
-			echo "<script>location.href = 'menu.php';</script>";
+			echo "<script>location.href = 'admin.php';</script>";
 		}
 		else {
-			continue;
+			header("menu.php");
+			session_start();
+			$_SESSION["ID"] = $row["ID"];
+			$_SESSION["User"] = $row["username"];
+			$_SESSION["Pass"] = $row["password"];
+			$_SESSION['fname'] = $row["fname"];
+			$_SESSION['lname'] = $row["lname"];
+			$_SESSION['email'] = $row["email"];
 		}
-		
-		header("menu.php");
-		session_start();
-		$_SESSION["ID"] = $row["ID"];
-		$_SESSION["User"] = $row["username"];
-		$_SESSION["Pass"] = $row["password"];
-		$_SESSION['fname'] = $row["fname"];
-		$_SESSION['lname'] = $row["lname"];
-        $_SESSION['email'] = $row["email"];
 	}
 	else {
 		echo "<script>alert('Username and/or Password not recognized')</script>";
