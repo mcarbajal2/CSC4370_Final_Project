@@ -10,7 +10,8 @@ INSERT INTO Users (Username, Password) VALUES ("admin", "admin");
 INSERT INTO Users VALUES ("cs@gsu.edu", "computer", "science", "John", "Smith");
 
 CREATE TABLE Inventory (
-	Name varchar(30) NOT NULL PRIMARY KEY,
+	ID int(3) NOT NULL auto_increment PRIMARY KEY,
+	Product varchar(30) NOT NULL,
 	Price decimal(4,2) NOT NULL,
 	Quantity int(10)
 );
