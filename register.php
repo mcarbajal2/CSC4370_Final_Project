@@ -27,7 +27,6 @@
 </html>
 
 <?php
-
 $dbHost = 'localhost';
 $dbUsername = 'jluu4';
 $dbPassword = 'jluu4';
