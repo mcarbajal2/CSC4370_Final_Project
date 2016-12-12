@@ -1,3 +1,8 @@
+@font-face {
+	font-family: nervous;
+	src: url("https://www.dropbox.com/s/jpjlhzsrqr7g5ts/NERVOUS.TTF?dl=0");
+}
+
 body {
 	background-image: url("http://codd.cs.gsu.edu/~mcarbajal2/final/images/DARKHALLWAY.jpg");
 	background-size: cover;
@@ -152,7 +157,7 @@ h4 {
 marquee.welcome_bar {
 	color: white;
 	text-align: center;
-	font-size: 45px;
+	font-size: 60px;
 	padding: 20px;
 }
 
