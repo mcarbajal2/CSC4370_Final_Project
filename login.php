@@ -42,14 +42,16 @@ if(isset($_POST["login"])){
 	$password = $_POST['password'];
     
     $res = mysql_query("SELECT * FROM Users WHERE Username='$username' AND Password='$password'");
-    
     $row = mysql_fetch_array($res);
-    
     $count = mysql_num_rows($res);
     
     if ($count > 0) {
-        header("Location: menu.php");
-        session_start();
+        if ($username == 'admin') {
+            header("Location: admin.php");
+        } else {
+            header("Location: menu.php");
+            session_start();
+        }
     }
     
 	else {
