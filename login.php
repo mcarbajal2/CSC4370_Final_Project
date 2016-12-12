@@ -7,7 +7,7 @@
     <body>
         <br /><br /><h1>Log In to Prowl Shop</h1><hr style = "width: 20%">
         <div id = "login">
-            <form action = "" method = "POST">
+            <form action = "#" method = "POST">
                 <fieldset>
                     <label><b>Username:</b></label><br><br>
                     <input type = "text" name = "username" id="username"><br /><br />
