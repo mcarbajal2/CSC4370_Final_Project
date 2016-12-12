@@ -1,4 +1,3 @@
-
 function numberWithSpaces(number) {
     return number.toString().replace(/\B(?=(\d{4})+(?!\d))/g, " ");
 }
@@ -18,6 +17,8 @@ function setCardType(number) {
         document.getElementById('card-number').innerHTML = "•••• •••• •••• ••••";
         document.getElementById('card-name').innerHTML = "CARDHOLDER NAME";
         
+        document.getElementById("logo-img").src = "#";
+        
     }
     
     // VISA
@@ -30,6 +31,8 @@ function setCardType(number) {
         
         document.getElementById("card-num").maxLength = "19";
         document.getElementById("cvc").maxLength = "3";
+        
+        document.getElementById("logo-img").src = "checkout/visa_logo.png";
     }
     
     // MASTERCARD
@@ -42,6 +45,8 @@ function setCardType(number) {
         
         document.getElementById("card-num").maxLength = "19";
         document.getElementById("cvc").maxLength = "3";
+        
+        document.getElementById("logo-img").src = "checkout/mastercard_logo.png";
     }
     
     // AMEX
@@ -54,6 +59,8 @@ function setCardType(number) {
         
         document.getElementById("card-num").maxLength = "18";
         document.getElementById("cvc").maxLength = "4";
+        
+        document.getElementById("logo-img").src = "checkout/amex_logo.png";
     }
     
     // DISCOVER
@@ -66,6 +73,8 @@ function setCardType(number) {
         
         document.getElementById("card-num").maxLength = "19";
         document.getElementById("cvc").maxLength = "3";
+        
+        document.getElementById("logo-img").src = "checkout/discover_logo.png";
     }
 }
 
@@ -78,12 +87,14 @@ function setCardMonth() {
     var month = document.getElementById('exp-month');
     var selected = month.options[month.selectedIndex].value;
     document.getElementById('expmonth').innerHTML = selected;
+    document.getElementById('exp-month').style.color = "#000000";
 }
 
 function setCardYear() {
     var year = document.getElementById('exp-year');
     var selected = year.options[year.selectedIndex].value;
     document.getElementById('expyear').innerHTML = selected;
+    document.getElementById('exp-year').style.color = "#000000";
 }
 
 function setSecurityCode() {
