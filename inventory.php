@@ -29,7 +29,7 @@ if(isset($_POST["add_to_cart"]))
       {  
            $item_array = array(  
                 'item_id'               =>     $_GET["id"],  
-                'item_name'               =>     $_POST["hidden_name"],  
+                'item_name'               =>     $_POST["hidden_product"],  
                 'item_price'          =>     $_POST["hidden_price"],  
                 'item_quantity'          =>     $_POST["quantity"]  
            );  
