@@ -86,7 +86,7 @@ if(isset($_POST["register"])){
 		echo "<script>alert('Registration successful')</script>";
 		echo "<script>window.open('login.php','_self')</script>";
 		//create user table
-		$query = "CREATE TABLE $username (ID int(3) NOT NULL auto_increment, Product varchar(50) NOT NULL, Quantity int(20))";
+		$query = "CREATE TABLE $username (ID int(3) NOT NULL auto_increment PRIMARY KEY, Product varchar(50) NOT NULL, Quantity int(20))";
 		mysql_query($query);
 	}
 }
