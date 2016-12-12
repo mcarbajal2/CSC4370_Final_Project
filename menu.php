@@ -6,7 +6,7 @@
 </head>
 <body>
 	<div id = "menu">
-		<marquee scrollamount = "12" class = "welcome_bar">Welcome to the dark side!</marquee>
+		<marquee scrollamount = "12" class = "welcome_bar" style = "font-family: nervous">WELCOME TO THE DARK SIDE</marquee>
 		<h4 style = "text-decoration: underline">prowlshop.com</h4>
 	</div>
 	<div id = "menu_body">
