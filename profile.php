@@ -1,4 +1,22 @@
-<? session_start(); ?>
+<? 
+
+session_start();
+
+$dbHost = 'localhost';
+$dbUsername = 'jluu4';
+$dbPassword = 'jluu4';
+$dbName = 'jluu4';
+
+$connect = mysql_connect($dbHost, $dbUsername, $dbPassword);
+$dbConnect = mysql_select_db($dbName);
+if (!$connect) {
+    die("Connection failed: " . mysql_error());
+}
+if (!$dbConnect) {
+    die("Database Connection failed: " . mysql_error());
+}
+
+?>
 
 <!DOCTYPE html>
 <html>
@@ -8,7 +26,9 @@
 </head>
 <body>
 	<?
-		if (isset($_SESSION['ID'])) {
+		if (isset($_SESSION['username'])) {
+            $res
+            
 	?>
 	<div id = "inventory">
 		<h1>Your Profile</h1><hr style = "width: 70%">
@@ -20,11 +40,11 @@
 		<tr><td class = "profile_header">Personal Information</td></tr>
 		<tr><td class = "profile_info">
 			<ul>
-				<li>Username: <?php echo $_SESSION['User']; ?></li>
-				<li>Password: <?php echo $_SESSION['Pass']; ?></li>
-				<li>Email: <?php echo $_SESSION['email']; ?></li>
-				<li>First Name: <?php echo $_SESSION['fname']; ?></li>
-				<li>Last Name: <?php echo $_SESSION['lname']; ?></li>
+				<li>Username: <?php echo $username; ?></li>
+				<li>Password: <?php echo $password; ?></li>
+				<li>Email: <?php echo $email; ?></li>
+				<li>First Name: <?php echo $firstname; ?></li>
+				<li>Last Name: <?php echo $lastname; ?></li>
 			</ul>
 		</td></tr>
 		<tr><td class = "profile_header">Past Purchases</td></tr>
@@ -39,6 +59,7 @@
 	</div>
 	<?
 		}
+    
 	?>
 	<p><a href = "menu.php" align = >Back to menu</a></p>
 </body>
