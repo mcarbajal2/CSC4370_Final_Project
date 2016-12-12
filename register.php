@@ -85,19 +85,10 @@ if(isset($_POST["register"])){
 	if($result){
 		echo "<script>alert('Registration successful')</script>";
 		echo "<script>window.open('login.php','_self')</script>";
-	}
-/*//create user's orders table
+		//create user table
 		$query = "CREATE TABLE $username (ID int(3) NOT NULL auto_increment, Product varchar(50) NOT NULL, Quantity int(20))";
-		try {
-			mysql_query($query);
-			//Could create user table
-			?><script type="text/javascript">location.href = 'menu.php';</script><?
-		}
-		catch(Exception $e) {
-			//could not create user table
-			?><script type="text/javascript">alert("There was an error registering you, please try again. Thank you.");</script><?
-		}
-	}*/
+		mysql_query($query);
+	}
 }
 	
 ?>

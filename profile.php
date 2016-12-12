@@ -20,11 +20,11 @@
 		<tr><td class = "profile_header">Personal Information</td></tr>
 		<tr><td class = "profile_info">
 			<ul>
-				<li>Username: <?php echo $username; ?></li>
-				<li>Password: <?php echo $password; ?></li>
-				<li>Email: <?php echo $email; ?></li>
-				<li>First Name: <?php echo $fname; ?></li>
-				<li>Last Name: <?php echo $lname; ?></li>
+				<li>Username: <?php echo $_SESSION['User']; ?></li>
+				<li>Password: <?php echo $_SESSION['Pass']; ?></li>
+				<li>Email: <?php echo $_SESSION['email']; ?></li>
+				<li>First Name: <?php echo $_SESSION['fname']; ?></li>
+				<li>Last Name: <?php echo $_SESSION['lname']; ?></li>
 			</ul>
 		</td></tr>
 		<tr><td class = "profile_header">Past Purchases</td></tr>
@@ -37,9 +37,9 @@
 		</table>
 		</form>
 	</div>
-	<p><a href = "menu.php" align = >Back to menu</a></p>
 	<?
 		}
 	?>
+	<p><a href = "menu.php" align = >Back to menu</a></p>
 </body>
 </html>
