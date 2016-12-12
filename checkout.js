@@ -1,3 +1,4 @@
+
 function numberWithSpaces(number) {
     return number.toString().replace(/\B(?=(\d{4})+(?!\d))/g, " ");
 }
