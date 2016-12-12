@@ -2,6 +2,10 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto:400,900,700,500');
 
 body {
+    background-image: url("DARKHALLWAY.jpg");
+	background-size: cover;
+	background-attachment: fixed;
+    
     padding: 50px 0px;
     background-color: lightgray;
     margin: 0 auto;
@@ -114,6 +118,7 @@ select {
     float: left;  
     font-size: 25px;
     padding: 5px;
+    color: white;
 }
 
 #cvc {
@@ -125,7 +130,6 @@ select {
 
 #card-type {
     float: right;
-    
 }
 
 #visa-card, #master-card, #amex-card, #discover-card {
