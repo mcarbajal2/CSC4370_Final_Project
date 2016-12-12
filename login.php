@@ -22,12 +22,10 @@
 </html>
 
 <?php
-
 $dbHost = 'localhost';
 $dbUsername = 'jluu4';
 $dbPassword = 'jluu4';
 $dbName = 'jluu4';
-
 $connect = mysql_connect($dbHost, $dbUsername, $dbPassword);
 $dbConnect = mysql_select_db($dbName);
 if (!$connect) {
@@ -36,7 +34,6 @@ if (!$connect) {
 if (!$dbConnect) {
     die("Database Connection failed: " . mysql_error());
 }
-
 if(isset($_POST["login"])){
 	$username = $_POST['username'];
 	$password = $_POST['password'];
@@ -51,6 +48,7 @@ if(isset($_POST["login"])){
         } else {
             header("Location: menu.php");
             session_start();
+			$_SESSION['username'] = $username;
         }
     }
     

@@ -1,22 +1,4 @@
-<? 
-
-session_start();
-
-$dbHost = 'localhost';
-$dbUsername = 'jluu4';
-$dbPassword = 'jluu4';
-$dbName = 'jluu4';
-
-$connect = mysql_connect($dbHost, $dbUsername, $dbPassword);
-$dbConnect = mysql_select_db($dbName);
-if (!$connect) {
-    die("Connection failed: " . mysql_error());
-}
-if (!$dbConnect) {
-    die("Database Connection failed: " . mysql_error());
-}
-
-?>
+<? session_start(); ?>
 
 <!DOCTYPE html>
 <html>
@@ -27,8 +9,11 @@ if (!$dbConnect) {
 <body>
 	<?
 		if (isset($_SESSION['username'])) {
-            $res
-            
+			 $resU = mysql_query("SELECT Username FROM Users WHERE Username='. $_SESSION['username'] .'");
+			 $resP = mysql_query("SELECT Password FROM Users WHERE Username='. $_SESSION['username'] .'");
+			 $resE = mysql_query("SELECT Email FROM Users WHERE Username='. $_SESSION['username'] .'");
+			 $resF = mysql_query("SELECT FirstName FROM Users WHERE Username='. $_SESSION['username'] .'");
+			 $resL = mysql_query("SELECT LastName FROM Users WHERE Username='. $_SESSION['username'] .'");
 	?>
 	<div id = "inventory">
 		<h1>Your Profile</h1><hr style = "width: 70%">
@@ -40,11 +25,11 @@ if (!$dbConnect) {
 		<tr><td class = "profile_header">Personal Information</td></tr>
 		<tr><td class = "profile_info">
 			<ul>
-				<li>Username: <?php echo $username; ?></li>
-				<li>Password: <?php echo $password; ?></li>
-				<li>Email: <?php echo $email; ?></li>
-				<li>First Name: <?php echo $firstname; ?></li>
-				<li>Last Name: <?php echo $lastname; ?></li>
+				<li>Username: <?php echo $resU; ?></li>
+				<li>Password: <?php echo $resP; ?></li>
+				<li>Email: <?php echo $resE; ?></li>
+				<li>First Name: <?php echo $resF; ?></li>
+				<li>Last Name: <?php echo $resL; ?></li>
 			</ul>
 		</td></tr>
 		<tr><td class = "profile_header">Past Purchases</td></tr>
@@ -59,7 +44,6 @@ if (!$dbConnect) {
 	</div>
 	<?
 		}
-    
 	?>
 	<p><a href = "menu.php" align = >Back to menu</a></p>
 </body>
