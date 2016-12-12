@@ -1,3 +1,5 @@
+<? session_start(); ?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -5,6 +7,11 @@
 	<title>Profile - ProwlShop.com</title>
 </head>
 <body>
+	<?
+	if (isset($_SESSION['email'])) {
+		$email = $_SESSION["email"];
+	}
+	?>
 	<div id = "inventory">
 		<h1>Your Profile</h1><hr style = "width: 70%">
 		<h4 style = "text-decoration: underline">prowlshop.com</h4>
@@ -15,11 +22,11 @@
 		<tr><td class = "profile_header">Personal Information</td></tr>
 		<tr><td class = "profile_info">
 			<ul>
-				<li>Username:</li>
-				<li>Password:</li>
-				<li>E-mail:</li>
-				<li>First Name:</li>
-				<li>Last Name:</li>
+				<li>Username: <?php echo $username; ?></li>
+				<li>Password: <?php echo $password; ?></li>
+				<li>Email: <?php echo $email; ?></li>
+				<li>First Name: <?php echo $fname; ?></li>
+				<li>Last Name: <?php echo $lname; ?></li>
 			</ul>
 		</td></tr>
 		<tr><td class = "profile_header">Past Purchases</td></tr>
