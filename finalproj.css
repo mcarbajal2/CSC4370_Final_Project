@@ -17,7 +17,7 @@ body {
 
 #register {
 	width: 35vw;
-	height: 80vh;
+	height: 97vh;
 	background-image: url("http://codd.cs.gsu.edu/~mcarbajal2/final/images/transparentblack.png");
 	background-attachment: repeat;
 	border-radius: 50px;
@@ -102,7 +102,7 @@ body {
 }
 
 #cart_body {
-	height: 72vh;
+	height: 78vh;
 	width: 35vw;
 	border-radius: 50px;
 	margin-right: auto;
@@ -240,4 +240,19 @@ img.thankyou {
 	width: 35vw;
 	text-align: center;
 	padding-top: 40px;
+}
+
+input {
+	border: 3px solid white; 
+    -webkit-box-shadow: 
+      inset 0 0 8px  rgba(0, 0, 0, 0.1),
+            0 0 16px rgba(0, 0, 0, 0.1); 
+    -moz-box-shadow: 
+      inset 0 0 8px  rgba(0, 0, 0, 0.1),
+            0 0 16px rgba(0, 0, 0, 0.1); 
+    box-shadow: 
+      inset 0 0 8px  rgba(0, 0, 0, 0.1),
+            0 0 16px rgba(0, 0, 0, 0.1); 
+    padding: 9px;
+    margin: 0 0 10px 0;
 }

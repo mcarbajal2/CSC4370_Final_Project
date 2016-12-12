@@ -19,19 +19,24 @@
 		Last Name: <br /><br />
 		<input type = "text" name = "newLname"><br /><br />
 		<input type = "submit" value = "Create Account" name = "register"><br /><br />
-		<a href = "login.html">Back to home</a>
+		<a href = "login.php">Back to home</a>
 		</p>
 		</form>
 	</div>
 <body>
 </html>
 
-<?
-$connect = mysqli_connect("localhost", "vbarot1", "vbarot1", "vbarot1"); 
+<?php
+
+$dbHost = 'localhost';
+$dbUsername = 'vbarot1';
+$dbPassword = 'vbarot1';
+$dbName = 'vbarot1';
+
+$connect = mysqli_connect( $dbHost, $dbUsername, $dbPassword, $dbName); 
 if($connect->connect_error) {
 	die("Connection failed: " . $connect->connect_error);
 }
-//include("http://codd.cs.gsu.edu/~mcarbajal2/final/config.php");
 
 if(isset($_POST["register"])){
 	$username = $_POST['newUsername'];
@@ -40,28 +45,47 @@ if(isset($_POST["register"])){
 	$fname = $_POST['newFname'];
 	$lname = $_POST['newLname'];
 	
+	if($fname==""){
+		echo"<script>alert('Enter all fields')</script>";
+		return;
+	}
+	if($lname==""){
+		echo"<script>alert('Enter all fields')</script>";
+		return;
+	}
+	if($username==""){
+		echo"<script>alert('Enter all fields')</script>";
+		return;
+	}
+	
+	if($password==""){
+		echo"<script>alert('Enter all fields')</script>";
+		return;
+	}
 	$query = "SELECT * FROM Users WHERE username = '$username'";
 	$result = $connect->query($query);
 	//check username
-	if($run->num_rows > 0){
-		?><script type="text/javascript">alert("You cannot register using that username.");</script><?
+	if($result->num_rows > 0){
+		echo "<script> alert('Username $username already exists')</script>";
+		return;
 	}
 	
 	$query = "SELECT * FROM Users WHERE email = '$email'";
 	$result = $connect->query($query);
 	//check email
-	if($run->num_rows > 0){
-		?><script type="text/javascript">alert("You cannot register using that e-mail.");</script><?
+	if($result->num_rows > 0){
+		echo "<script> alert('Email $email already exists')</script>";
+		return;
+
 	}
 	
 	//Register user
-	$query = "INSERT INTO Users VALUES ('$newEmail', '$username', '$password', '$newFname', '$newLname')";
-	$result = $connect->query($result);
+	$query = "INSERT INTO Users VALUES ('$email', '$username', '$password', '$fname', '$lname')";
+	$result = $connect->query($query);
 	if($result){
-		?><script type="text/javascript">alert("Success!");</script>
-		<script type="text/javascript">location.href = 'menu.php';</script><?
+		echo "<script>alert('Registration successful')</script>";
+		echo "<script>window.open('login.php','_self')</script>";
 	}
-
 /*//create user's orders table
 		$query = "CREATE TABLE $username (ID int(3) NOT NULL auto_increment, Product varchar(50) NOT NULL, Quantity int(20))";
 		try {
@@ -69,7 +93,6 @@ if(isset($_POST["register"])){
 			//Could create user table
 			?><script type="text/javascript">location.href = 'menu.php';</script><?
 		}
-
 		catch(Exception $e) {
 			//could not create user table
 			?><script type="text/javascript">alert("There was an error registering you, please try again. Thank you.");</script><?
@@ -77,5 +100,4 @@ if(isset($_POST["register"])){
 	}*/
 }
 	
-mysql_close();
 ?>

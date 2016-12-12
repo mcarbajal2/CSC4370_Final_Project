@@ -8,9 +8,7 @@
 </head>
 <body>
 	<?
-	if (isset($_SESSION['email'])) {
-		$email = $_SESSION["email"];
-	}
+		if (isset($_SESSION['ID'])) {
 	?>
 	<div id = "inventory">
 		<h1>Your Profile</h1><hr style = "width: 70%">
@@ -40,5 +38,8 @@
 		</form>
 	</div>
 	<p><a href = "menu.php" align = >Back to menu</a></p>
+	<?
+		}
+	?>
 </body>
 </html>

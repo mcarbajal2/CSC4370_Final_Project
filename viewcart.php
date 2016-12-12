@@ -19,7 +19,7 @@
 		<tr><td class = "cart">Scholarship 6 x0 - $0</td></tr>
 		</table>
 		<p class = "cart_total">Total: $0</p>
-		<form method = "link" action = "checkout.html">
+		<form method = "link" action = "checkout-new.html">
 			<center><input type = "submit" value = "Go to Checkout"></center>
 		</form>
 	</div>

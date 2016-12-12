@@ -20,36 +20,37 @@
 <body>
 </html>
 
-<?
-$connect = mysqli_connect("localhost", "vbarot1", "vbarot1", "vbarot1"); 
+<?php
+
+$dbHost = 'localhost';
+$dbUsername = 'vbarot1';
+$dbPassword = 'vbarot1';
+$dbName = 'vbarot1';
+
+$connect = mysqli_connect( $dbHost, $dbUsername, $dbPassword, $dbName);
 if($connect->connect_error) {
-	die("Connection failed: " . $connect->connect_error);
+        die("Connection failed: " . $connect->connect_error);
 }
-//include("http://codd.cs.gsu.edu/~mcarbajal2/final/config.php");
 
 if(isset($_POST["login"])){
 	$username = $_POST['username'];
 	$password = $_POST['password'];
-
 	$query = "SELECT * FROM Users WHERE username = '$username' AND password = '$password'";
 	$result = $connect->query($query);
-	if($run->num_rows > 0){
-		//check if admin here?
-		
+	if($result->num_rows > 0){		
 			header("menu.php");
 			session_start();
 			$row = $run->fetch_array(MYSQLI_ASSOC);
-			$_SESSION["ID"] = $row["ID"];
-			$_SESSION["User"] = $row["username"];
-			$_SESSION["Pass"] = $row["password"];
+			$_SESSION['ID'] = $row["ID"];
+			$_SESSION['User'] = $row["username"];
+			$_SESSION['Pass'] = $row["password"];
 			$_SESSION['fname'] = $row["fname"];
 			$_SESSION['lname'] = $row["lname"];
 			$_SESSION['email'] = $row["email"];
 	}
 	else {
-		?><script type="text/javascript">alert("Username and/or Password not recognized")</script><?
+		echo "<script>alert('Username and/or Password not recognized')</script>";
 		return;
 	}
 }
-mysql_close();
 ?>
