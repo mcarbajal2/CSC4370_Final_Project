@@ -62,7 +62,8 @@ if(isset($_POST["register"])){
 		echo"<script>alert('Enter all fields')</script>";
 		return;
 	}
-	$query = "SELECT * FROM Users WHERE username = '$username'";
+	
+	$query = "SELECT * FROM Users WHERE Username = '$username'";
 	$result = $connect->query($query);
 	//check username
 	if($result->num_rows > 0){
@@ -70,7 +71,7 @@ if(isset($_POST["register"])){
 		return;
 	}
 	
-	$query = "SELECT * FROM Users WHERE email = '$email'";
+	$query = "SELECT * FROM Users WHERE Email = '$email'";
 	$result = $connect->query($query);
 	//check email
 	if($result->num_rows > 0){
